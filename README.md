@@ -4,8 +4,6 @@
 
 Aplicación académica de planificación de viajes para mujeres, desarrollada con React y JavaScript. Integra un backend Node.js mediante una API REST para destinos y una API GraphQL para vuelos y hoteles.
 
-**Autora:** María Martínez  
-**Asignatura:** Frontend II  
 **Evaluación:** Sumativa 2 — Integrando nuestro frontend con backend
 
 ## Objetivo del proyecto
