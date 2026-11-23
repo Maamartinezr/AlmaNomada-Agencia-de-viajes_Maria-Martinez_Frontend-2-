@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: REST lista nueve destinos con país, actividades y categorías
+ok 1 - REST lista nueve destinos con país, actividades y categorías
+  ---
+  duration_ms: 83.5935
+  type: 'test'
+  ...
+# Subtest: REST detalle y 404 JSON
+ok 2 - REST detalle y 404 JSON
+  ---
+  duration_ms: 19.2439
+  type: 'test'
+  ...
+# Subtest: CORS permite el frontend local
+ok 3 - CORS permite el frontend local
+  ---
+  duration_ms: 9.6003
+  type: 'test'
+  ...
+# Subtest: GraphQL selecciona solo campos solicitados y filtra vuelos
+ok 4 - GraphQL selecciona solo campos solicitados y filtra vuelos
+  ---
+  duration_ms: 68.5615
+  type: 'test'
+  ...
+# Subtest: GraphQL hoteles por destino con fechas y servicios
+ok 5 - GraphQL hoteles por destino con fechas y servicios
+  ---
+  duration_ms: 13.1286
+  type: 'test'
+  ...
+# Subtest: GraphQL devuelve lista vacía para destino sin opciones
+ok 6 - GraphQL devuelve lista vacía para destino sin opciones
+  ---
+  duration_ms: 10.1297
+  type: 'test'
+  ...
+# Subtest: GraphQL valida campos desconocidos
+ok 7 - GraphQL valida campos desconocidos
+  ---
+  duration_ms: 11.5281
+  type: 'test'
+  ...
+# Subtest: GraphQL rechaza variables obligatorias ausentes
+ok 8 - GraphQL rechaza variables obligatorias ausentes
+  ---
+  duration_ms: 9.6993
+  type: 'test'
+  ...
+# Subtest: GraphQL rechaza cuerpo sin query
+ok 9 - GraphQL rechaza cuerpo sin query
+  ---
+  duration_ms: 8.3938
+  type: 'test'
+  ...
+# Subtest: JSON inválido produce error HTTP 400
+ok 10 - JSON inválido produce error HTTP 400
+  ---
+  duration_ms: 10.8172
+  type: 'test'
+  ...
+# Subtest: Relaciones REST/GraphQL coherentes para los nueve destinos
+ok 11 - Relaciones REST/GraphQL coherentes para los nueve destinos
+  ---
+  duration_ms: 47.9125
+  type: 'test'
+  ...
+# Subtest: Costo considera viajeras, noches y habitaciones dobles
+ok 12 - Costo considera viajeras, noches y habitaciones dobles
+  ---
+  duration_ms: 1.2758
+  type: 'test'
+  ...
+# Subtest: Costo no mezcla monedas
+ok 13 - Costo no mezcla monedas
+  ---
+  duration_ms: 0.3087
+  type: 'test'
+  ...
+# Subtest: Disponibilidad exige cada noche y no la noche del checkout
+ok 14 - Disponibilidad exige cada noche y no la noche del checkout
+  ---
+  duration_ms: 0.5496
+  type: 'test'
+  ...
+# Subtest: Contacto y reserva comparten validación de nombre y correo
+ok 15 - Contacto y reserva comparten validación de nombre y correo
+  ---
+  duration_ms: 1.6991
+  type: 'test'
+  ...
+# Subtest: Contacto exige mensaje y reserva permite comentarios opcionales
+ok 16 - Contacto exige mensaje y reserva permite comentarios opcionales
+  ---
+  duration_ms: 2.1958
+  type: 'test'
+  ...
+# Subtest: Los límites de texto se aplican también fuera de los atributos HTML
+ok 17 - Los límites de texto se aplican también fuera de los atributos HTML
+  ---
+  duration_ms: 0.3211
+  type: 'test'
+  ...
+# Subtest: Los límites de viajeras respetan cupos e impiden cantidades inválidas
+ok 18 - Los límites de viajeras respetan cupos e impiden cantidades inválidas
+  ---
+  duration_ms: 0.2468
+  type: 'test'
+  ...
+# Subtest: Espacios externos válidos no alteran los datos originales
+ok 19 - Espacios externos válidos no alteran los datos originales
+  ---
+  duration_ms: 0.5816
+  type: 'test'
+  ...
+# Subtest: Un formulario incompleto devuelve errores y no una excepción
+ok 20 - Un formulario incompleto devuelve errores y no una excepción
+  ---
+  duration_ms: 0.3043
+  type: 'test'
+  ...
+# Subtest: Nueve destinos con dos salidas y noches consistentes
+ok 21 - Nueve destinos con dos salidas y noches consistentes
+  ---
+  duration_ms: 2.3068
+  type: 'test'
+  ...
+# Subtest: Cada fecha tiene cuatro vuelos y tres disponibles
+ok 22 - Cada fecha tiene cuatro vuelos y tres disponibles
+  ---
+  duration_ms: 0.7995
+  type: 'test'
+  ...
+# Subtest: Todos los vuelos admiten tres categorías y tres equipajes con precios distintos
+ok 23 - Todos los vuelos admiten tres categorías y tres equipajes con precios distintos
+  ---
+  duration_ms: 2.5949
+  type: 'test'
+  ...
+# Subtest: Ida y vuelta suma regreso y equipaje en ambos tramos
+ok 24 - Ida y vuelta suma regreso y equipaje en ambos tramos
+  ---
+  duration_ms: 0.3939
+  type: 'test'
+  ...
+# Subtest: Ordenar no modifica los datos y utiliza precio o popularidad
+ok 25 - Ordenar no modifica los datos y utiliza precio o popularidad
+  ---
+  duration_ms: 2.1019
+  type: 'test'
+  ...
+# Subtest: Horarios incluyen límites y madrugada
+ok 26 - Horarios incluyen límites y madrugada
+  ---
+  duration_ms: 0.3313
+  type: 'test'
+  ...
+# Subtest: Hoteles cubren todas las estancias publicadas y Refugio está habilitado
+ok 27 - Hoteles cubren todas las estancias publicadas y Refugio está habilitado
+  ---
+  duration_ms: 3.4824
+  type: 'test'
+  ...
+# Subtest: Suite y cantidad de habitaciones cambian el total hasta 25
+ok 28 - Suite y cantidad de habitaciones cambian el total hasta 25
+  ---
+  duration_ms: 0.4309
+  type: 'test'
+  ...
+# Subtest: Servicios incluyen las tres familias y actividades por viajera
+ok 29 - Servicios incluyen las tres familias y actividades por viajera
+  ---
+  duration_ms: 0.2907
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1268.0721

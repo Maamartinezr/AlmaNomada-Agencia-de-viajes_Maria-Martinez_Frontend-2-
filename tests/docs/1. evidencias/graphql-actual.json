@@ -1,0 +1,430 @@
+{
+  "request": {
+    "query": "query Evidencia($id:ID!){vuelosPorDestino(destinoId:$id){id aerolinea fechaSalida fechaRegreso precio moneda tarifas{id nombre precio precioRegreso} equipajes{id nombre precio}} hotelesPorDestino(destinoId:$id){id nombre disponible habitacionesDisponibles tiposHabitacion{id nombre precioPorNoche}}}",
+    "variables": {
+      "id": "atacama"
+    }
+  },
+  "response": {
+    "data": {
+      "vuelosPorDestino": [
+        {
+          "id": "atacama-2026-12-10-v1",
+          "aerolinea": "LATAM Airlines",
+          "fechaSalida": "2026-12-10",
+          "fechaRegreso": "2026-12-14",
+          "precio": 189000,
+          "moneda": "CLP",
+          "tarifas": [
+            {
+              "id": "economica",
+              "nombre": "Económico",
+              "precio": 189000,
+              "precioRegreso": 170100
+            },
+            {
+              "id": "ejecutiva",
+              "nombre": "Ejecutivo",
+              "precio": 311850,
+              "precioRegreso": 280665
+            },
+            {
+              "id": "primera",
+              "nombre": "Primera Clase",
+              "precio": 453600,
+              "precioRegreso": 408240
+            }
+          ],
+          "equipajes": [
+            {
+              "id": "bolso",
+              "nombre": "Bolso de mano",
+              "precio": 0
+            },
+            {
+              "id": "cabina",
+              "nombre": "Bolso + Carry-on (10 kg)",
+              "precio": 18000
+            },
+            {
+              "id": "facturada",
+              "nombre": "Bolso + Carry-on (10 kg) + Maleta facturada (23 kg)",
+              "precio": 42000
+            }
+          ]
+        },
+        {
+          "id": "atacama-2026-12-10-v2",
+          "aerolinea": "SKY Airline",
+          "fechaSalida": "2026-12-10",
+          "fechaRegreso": "2026-12-14",
+          "precio": 216000,
+          "moneda": "CLP",
+          "tarifas": [
+            {
+              "id": "economica",
+              "nombre": "Económico",
+              "precio": 216000,
+              "precioRegreso": 194400
+            },
+            {
+              "id": "ejecutiva",
+              "nombre": "Ejecutivo",
+              "precio": 356400,
+              "precioRegreso": 320760
+            },
+            {
+              "id": "primera",
+              "nombre": "Primera Clase",
+              "precio": 518400,
+              "precioRegreso": 466560
+            }
+          ],
+          "equipajes": [
+            {
+              "id": "bolso",
+              "nombre": "Bolso de mano",
+              "precio": 0
+            },
+            {
+              "id": "cabina",
+              "nombre": "Bolso + Carry-on (10 kg)",
+              "precio": 18000
+            },
+            {
+              "id": "facturada",
+              "nombre": "Bolso + Carry-on (10 kg) + Maleta facturada (23 kg)",
+              "precio": 42000
+            }
+          ]
+        },
+        {
+          "id": "atacama-2026-12-10-v3",
+          "aerolinea": "JetSMART",
+          "fechaSalida": "2026-12-10",
+          "fechaRegreso": "2026-12-14",
+          "precio": 243000,
+          "moneda": "CLP",
+          "tarifas": [
+            {
+              "id": "economica",
+              "nombre": "Económico",
+              "precio": 243000,
+              "precioRegreso": 218700
+            },
+            {
+              "id": "ejecutiva",
+              "nombre": "Ejecutivo",
+              "precio": 400950,
+              "precioRegreso": 360855
+            },
+            {
+              "id": "primera",
+              "nombre": "Primera Clase",
+              "precio": 583200,
+              "precioRegreso": 524880
+            }
+          ],
+          "equipajes": [
+            {
+              "id": "bolso",
+              "nombre": "Bolso de mano",
+              "precio": 0
+            },
+            {
+              "id": "cabina",
+              "nombre": "Bolso + Carry-on (10 kg)",
+              "precio": 18000
+            },
+            {
+              "id": "facturada",
+              "nombre": "Bolso + Carry-on (10 kg) + Maleta facturada (23 kg)",
+              "precio": 42000
+            }
+          ]
+        },
+        {
+          "id": "atacama-2026-12-10-v4",
+          "aerolinea": "LATAM Airlines",
+          "fechaSalida": "2026-12-10",
+          "fechaRegreso": "2026-12-14",
+          "precio": 270000,
+          "moneda": "CLP",
+          "tarifas": [
+            {
+              "id": "economica",
+              "nombre": "Económico",
+              "precio": 270000,
+              "precioRegreso": 243000
+            },
+            {
+              "id": "ejecutiva",
+              "nombre": "Ejecutivo",
+              "precio": 445500,
+              "precioRegreso": 400950
+            },
+            {
+              "id": "primera",
+              "nombre": "Primera Clase",
+              "precio": 648000,
+              "precioRegreso": 583200
+            }
+          ],
+          "equipajes": [
+            {
+              "id": "bolso",
+              "nombre": "Bolso de mano",
+              "precio": 0
+            },
+            {
+              "id": "cabina",
+              "nombre": "Bolso + Carry-on (10 kg)",
+              "precio": 18000
+            },
+            {
+              "id": "facturada",
+              "nombre": "Bolso + Carry-on (10 kg) + Maleta facturada (23 kg)",
+              "precio": 42000
+            }
+          ]
+        },
+        {
+          "id": "atacama-2027-04-08-v1",
+          "aerolinea": "LATAM Airlines",
+          "fechaSalida": "2027-04-08",
+          "fechaRegreso": "2027-04-14",
+          "precio": 189000,
+          "moneda": "CLP",
+          "tarifas": [
+            {
+              "id": "economica",
+              "nombre": "Económico",
+              "precio": 189000,
+              "precioRegreso": 170100
+            },
+            {
+              "id": "ejecutiva",
+              "nombre": "Ejecutivo",
+              "precio": 311850,
+              "precioRegreso": 280665
+            },
+            {
+              "id": "primera",
+              "nombre": "Primera Clase",
+              "precio": 453600,
+              "precioRegreso": 408240
+            }
+          ],
+          "equipajes": [
+            {
+              "id": "bolso",
+              "nombre": "Bolso de mano",
+              "precio": 0
+            },
+            {
+              "id": "cabina",
+              "nombre": "Bolso + Carry-on (10 kg)",
+              "precio": 18000
+            },
+            {
+              "id": "facturada",
+              "nombre": "Bolso + Carry-on (10 kg) + Maleta facturada (23 kg)",
+              "precio": 42000
+            }
+          ]
+        },
+        {
+          "id": "atacama-2027-04-08-v2",
+          "aerolinea": "SKY Airline",
+          "fechaSalida": "2027-04-08",
+          "fechaRegreso": "2027-04-14",
+          "precio": 216000,
+          "moneda": "CLP",
+          "tarifas": [
+            {
+              "id": "economica",
+              "nombre": "Económico",
+              "precio": 216000,
+              "precioRegreso": 194400
+            },
+            {
+              "id": "ejecutiva",
+              "nombre": "Ejecutivo",
+              "precio": 356400,
+              "precioRegreso": 320760
+            },
+            {
+              "id": "primera",
+              "nombre": "Primera Clase",
+              "precio": 518400,
+              "precioRegreso": 466560
+            }
+          ],
+          "equipajes": [
+            {
+              "id": "bolso",
+              "nombre": "Bolso de mano",
+              "precio": 0
+            },
+            {
+              "id": "cabina",
+              "nombre": "Bolso + Carry-on (10 kg)",
+              "precio": 18000
+            },
+            {
+              "id": "facturada",
+              "nombre": "Bolso + Carry-on (10 kg) + Maleta facturada (23 kg)",
+              "precio": 42000
+            }
+          ]
+        },
+        {
+          "id": "atacama-2027-04-08-v3",
+          "aerolinea": "JetSMART",
+          "fechaSalida": "2027-04-08",
+          "fechaRegreso": "2027-04-14",
+          "precio": 243000,
+          "moneda": "CLP",
+          "tarifas": [
+            {
+              "id": "economica",
+              "nombre": "Económico",
+              "precio": 243000,
+              "precioRegreso": 218700
+            },
+            {
+              "id": "ejecutiva",
+              "nombre": "Ejecutivo",
+              "precio": 400950,
+              "precioRegreso": 360855
+            },
+            {
+              "id": "primera",
+              "nombre": "Primera Clase",
+              "precio": 583200,
+              "precioRegreso": 524880
+            }
+          ],
+          "equipajes": [
+            {
+              "id": "bolso",
+              "nombre": "Bolso de mano",
+              "precio": 0
+            },
+            {
+              "id": "cabina",
+              "nombre": "Bolso + Carry-on (10 kg)",
+              "precio": 18000
+            },
+            {
+              "id": "facturada",
+              "nombre": "Bolso + Carry-on (10 kg) + Maleta facturada (23 kg)",
+              "precio": 42000
+            }
+          ]
+        },
+        {
+          "id": "atacama-2027-04-08-v4",
+          "aerolinea": "LATAM Airlines",
+          "fechaSalida": "2027-04-08",
+          "fechaRegreso": "2027-04-14",
+          "precio": 270000,
+          "moneda": "CLP",
+          "tarifas": [
+            {
+              "id": "economica",
+              "nombre": "Económico",
+              "precio": 270000,
+              "precioRegreso": 243000
+            },
+            {
+              "id": "ejecutiva",
+              "nombre": "Ejecutivo",
+              "precio": 445500,
+              "precioRegreso": 400950
+            },
+            {
+              "id": "primera",
+              "nombre": "Primera Clase",
+              "precio": 648000,
+              "precioRegreso": 583200
+            }
+          ],
+          "equipajes": [
+            {
+              "id": "bolso",
+              "nombre": "Bolso de mano",
+              "precio": 0
+            },
+            {
+              "id": "cabina",
+              "nombre": "Bolso + Carry-on (10 kg)",
+              "precio": 18000
+            },
+            {
+              "id": "facturada",
+              "nombre": "Bolso + Carry-on (10 kg) + Maleta facturada (23 kg)",
+              "precio": 42000
+            }
+          ]
+        }
+      ],
+      "hotelesPorDestino": [
+        {
+          "id": "atacama-h1",
+          "nombre": "Casa del Horizonte · San Pedro de Atacama",
+          "disponible": true,
+          "habitacionesDisponibles": 25,
+          "tiposHabitacion": [
+            {
+              "id": "doble",
+              "nombre": "Habitación doble",
+              "precioPorNoche": 65000
+            },
+            {
+              "id": "suite",
+              "nombre": "Suite Deluxe",
+              "precioPorNoche": 100750
+            }
+          ]
+        },
+        {
+          "id": "atacama-h2",
+          "nombre": "Jardín de la Calma · San Pedro de Atacama",
+          "disponible": true,
+          "habitacionesDisponibles": 25,
+          "tiposHabitacion": [
+            {
+              "id": "doble",
+              "nombre": "Habitación doble",
+              "precioPorNoche": 83000
+            },
+            {
+              "id": "suite",
+              "nombre": "Suite Deluxe",
+              "precioPorNoche": 128650
+            }
+          ]
+        },
+        {
+          "id": "atacama-h3",
+          "nombre": "Refugio Nómada · San Pedro de Atacama",
+          "disponible": true,
+          "habitacionesDisponibles": 25,
+          "tiposHabitacion": [
+            {
+              "id": "doble",
+              "nombre": "Habitación doble",
+              "precioPorNoche": 101000
+            },
+            {
+              "id": "suite",
+              "nombre": "Suite Deluxe",
+              "precioPorNoche": 156550
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
