@@ -1,161 +1,439 @@
-# ALMA NÓMADA
+# Alma Nómada
 
-Actualización de planificación: [funcionalidades ampliadas](docs/AMPLIACION.md), [pruebas actuales](docs/pruebas/ampliacion-resultados.md) e [informe Word](docs/Informe%20de%20evidencias%20Alma%20Nomada.docx).
+**Viaja libre. Vive a tu manera.**
 
-Revisión de las recomendaciones de la evaluación anterior y esquema de responsabilidades: [aplicación de la retroalimentación](docs/retroalimentacion-profesor.md).
+Aplicación académica de planificación de viajes para mujeres, desarrollada con React y JavaScript. Integra un backend Node.js mediante una API REST para destinos y una API GraphQL para vuelos y hoteles.
 
-**Viaja libre. Vive a tu manera.** Plataforma académica de planificación de viajes para mujeres, evaluación «Integrando nuestro frontend con backend», Frontend II, 9.º bimestre.
+**Autora:** María Martínez  
+**Asignatura:** Frontend II  
+**Evaluación:** Sumativa 2 — Integrando nuestro frontend con backend
 
-La aplicación permite elegir destino → vuelo → hotel → resumen y solicitar una reserva **simulada**. El catálogo se obtiene por HTTP REST; vuelos y hoteles se consultan por HTTP POST a un servidor GraphQL real. Los datos son ficticios. No hay pagos, reservas comerciales ni envíos de correos.
+## Objetivo del proyecto
 
-## Tecnologías y arquitectura
+Permitir que una usuaria construya una planificación de viaje mediante un recorrido que integra selección de destino, vuelo, hotel y servicios adicionales opcionales.
 
-React 19, JavaScript JSX, HTML5, CSS Grid/Flexbox, Vite, React Router DOM (HashRouter), Fetch, Context API, useState y useEffect. Backend Node.js con Express, CORS y GraphQL.js (`buildSchema`, validación y ejecución del esquema). No se utiliza Next.js ni una simulación GraphQL dentro del navegador.
+El proyecto demuestra navegación con React Router, consultas HTTP, manejo de estado, validación de formularios, cálculo de importes y una interfaz adaptable a distintos tamaños de pantalla.
+
+Los datos y las solicitudes de reserva son de demostración. No se realizan pagos, reservas comerciales ni envíos de correos electrónicos.
+
+## Flujo principal
+
+1. Seleccionar un destino y una fecha disponible.
+2. Consultar y seleccionar un vuelo.
+3. Consultar y seleccionar un hotel.
+4. Elegir servicios adicionales o continuar sin agregarlos.
+5. Revisar el resumen y el importe estimado.
+6. Completar una solicitud de reserva simulada.
+
+El resumen permite modificar y eliminar elementos. Los importes se actualizan según las selecciones que permanecen en el viaje.
+
+## Funcionalidades
+
+### Inicio y navegación
+
+- Encabezado que permanece visible durante el desplazamiento.
+- Menú adaptable a escritorio y dispositivos móviles.
+- Accesos individuales a las cinco experiencias de la marca.
+- Navegación interna mediante React Router.
+- Página de recuperación para rutas inexistentes.
+
+### Experiencias
+
+La aplicación presenta cinco modalidades:
+
+| Experiencia | Público y propuesta |
+|---|---|
+| Alma Solo | Mujeres que desean viajar solas, con libertad e independencia. |
+| Alma Friends | Grupos de amigas que desean compartir aventuras y recuerdos. |
+| Alma Club | Mujeres que buscan conocer nuevas compañeras en viajes grupales. |
+| Alma Plenitud | Mujeres mayores que desean continuar explorando a su ritmo. |
+| Alma Wellness | Mujeres que buscan descanso, bienestar y contacto con la naturaleza. |
+
+Cada modalidad incluye información propia y un acceso al catálogo de destinos filtrado.
+
+Las modalidades orientan la experiencia y no constituyen restricciones de acceso por edad o estado civil.
+
+### Destinos
+
+- Catálogo obtenido mediante una consulta HTTP a la API REST.
+- Nueve destinos con información descriptiva.
+- Búsqueda por nombre y filtros por país y modalidad.
+- Detalle individual de cada destino.
+- Dos salidas disponibles por destino.
+- Selección de fecha para comenzar la planificación.
+
+### Vuelos
+
+- Consulta HTTP POST a la API GraphQL.
+- Opciones relacionadas con el destino y la fecha seleccionados.
+- Viajes de solo ida o de ida y vuelta.
+- Categorías Económico, Ejecutivo y Primera Clase.
+- Selección de equipaje.
+- Cantidad de viajeras.
+- Filtros de horario.
+- Ordenamiento por precio o popularidad de demostración.
+- Validación de disponibilidad y cupos.
+
+### Hoteles
+
+- Consulta de alojamientos mediante GraphQL.
+- Selección de habitación doble o Suite Deluxe.
+- Ajuste entre una y veinticinco habitaciones.
+- Recomendación de habitaciones según la cantidad de viajeras.
+- Validación de disponibilidad durante la estancia.
+- Cálculo del alojamiento según tarifa, noches y habitaciones.
+
+### Servicios adicionales
+
+La página disponible desde el menú principal es informativa. Presenta fotografías, descripciones y precios de referencia.
+
+La selección de servicios se realiza dentro del flujo del viaje, después de escoger el hotel.
+
+Las opciones incluyen:
+
+- Transporte desde y hacia el aeropuerto.
+- Alquiler de motos, autos y bicicletas.
+- Centro histórico y City Tour.
+- Naturaleza, historia y arte.
+- Tour nocturno y zona de bares.
+
+El paso incluye el botón **Continuar sin servicios adicionales**. Esta acción permite avanzar al resumen sin cargos por servicios.
+
+### Resumen y eliminación de elementos
+
+El resumen muestra destino, vuelo, alojamiento, servicios e importes estimados.
+
+Permite:
+
+- Modificar las selecciones.
+- Eliminar un servicio individual.
+- Eliminar todos los servicios adicionales.
+- Eliminar el hotel y sus servicios asociados.
+- Eliminar el vuelo, el hotel y los servicios asociados.
+- Eliminar el destino y vaciar la planificación.
+
+Cuando falta un elemento obligatorio, se conserva la información restante y se muestra el subtotal seleccionado. La solicitud de reserva queda deshabilitada hasta completar los pasos pendientes.
+
+### Formularios y reserva
+
+- Validación compartida entre contacto y reserva.
+- Validación de nombre, correo y campos requeridos.
+- Mensajes de error asociados a los campos.
+- Solicitud de reserva mediante una ventana modal.
+- Confirmación identificada expresamente como simulación.
+
+## Tecnologías utilizadas
+
+| Área | Tecnologías |
+|---|---|
+| Frontend | React 19, JavaScript, JSX, HTML5 y CSS |
+| Construcción | Vite |
+| Navegación | React Router DOM con HashRouter |
+| Estado | Context API, useState y sessionStorage |
+| Efectos y consultas | useEffect, Fetch y AbortController |
+| Backend | Node.js y Express |
+| API REST | Rutas Express con respuestas JSON |
+| API GraphQL | GraphQL.js, esquema, resolvers y variables |
+| Configuración | dotenv y CORS |
+| Iconografía | Lucide y símbolos de redes sociales |
+| Tipografías | Playfair Display, Montserrat y Caveat |
+| Dependencias | pnpm y configuración de workspace |
+| Pruebas | Ejecutor de pruebas de Node.js |
+
+## Arquitectura
+
+El frontend consulta los servicios del backend mediante HTTP:
 
 ```text
-React → destinosService → GET /api/destinos → Express → destinos.json
-React → graphqlService → POST /graphql → esquema/resolvers → vuelos.json/hoteles.json
+React
+ ├── destinosService
+ │    └── GET /api/destinos
+ │         └── Express → datos de destinos
+ │
+ └── graphqlService
+      └── POST /graphql
+           └── Esquema y resolvers → vuelos y hoteles
 ```
 
+Los datos de destinos, vuelos y hoteles se mantienen separados del código de presentación.
+
+La implementación GraphQL utiliza un servidor con esquema, validación y ejecución de consultas. No consiste en una simulación de consultas dentro del navegador.
+
+## Organización del proyecto
+
 ```text
-frontend/
-  public/images/       Fotografías locales, logo original y variantes SVG
-  src/components/     layout, destinations, flights, hotels, common
-  src/context/        TravelContext (useState + sessionStorage)
-  src/hooks/          useRemote (useEffect + AbortController)
-  src/pages/          Vistas React Router
-  src/services/       HTTP, REST y GraphQL
-  src/styles/         Paleta Terracota & Arena y responsive
-  src/utils/          Fechas, disponibilidad y costos
 backend/
-  data/               Datos JSON separados del frontend
-  graphql/            Esquema y resolvers por destinoId
-  routes/             REST de destinos
-  app.js              Express, CORS y manejo de errores
-  server.js           Inicio del servidor
-tests/                Pruebas HTTP y cálculo
-docs/                 Informe, matriz, guía y resultados
-.github/workflows/    Build, tests y publicación de Pages
+├── data/                  Datos de demostración
+├── graphql/               Esquema y resolvers
+├── routes/                Rutas REST
+├── .env.example           Ejemplo de configuración
+├── app.js                 Express, CORS y manejo de errores
+├── package.json           Dependencias del backend
+└── server.js              Inicio del servidor
+
+frontend/
+├── public/                Imágenes, logotipos y recursos
+├── src/
+│   ├── components/        Componentes reutilizables
+│   ├── context/           Estado de la planificación
+│   ├── data/              Experiencias y servicios adicionales
+│   ├── hooks/             Consultas y estados remotos
+│   ├── pages/             Páginas del aplicativo
+│   ├── services/          Clientes HTTP, REST y GraphQL
+│   ├── styles/            Estilos y adaptación responsive
+│   ├── utils/             Cálculos y reglas de selección
+│   └── App.jsx            Configuración de rutas
+├── .env.example           Ejemplo de configuración
+├── index.html             Entrada HTML
+├── package.json           Dependencias del frontend
+└── vite.config.js         Configuración de Vite
+
+docs/                      Informe y evidencias
+scripts/                   Herramientas de preparación del proyecto
+tests/                     Pruebas automatizadas
+.gitignore                 Exclusiones del repositorio
+.node-version              Versión de Node.js
+iniciar.cmd                Inicio local en Windows
+package.json               Configuración principal
+pnpm-lock.yaml             Versiones de dependencias
+pnpm-workspace.yaml        Relación entre frontend y backend
+README.md                  Documentación del proyecto
 ```
 
-## Instalación y ejecución local
+Las carpetas `node_modules` y `dist` no forman parte de la entrega del código fuente. Se generan durante la instalación y la compilación.
 
-Requisitos: Node.js **24** y pnpm **11.25.0**. Si tienes npm pero no pnpm, ejecuta `npm install -g pnpm@11.25.0`. También puedes usar Corepack si está disponible. Desde la carpeta raíz del proyecto:
+## Requisitos de ejecución local
 
-```powershell
+- Node.js 24.
+- pnpm 11.25.0.
+- Navegador web.
+- Conexión a Internet durante la instalación inicial de dependencias.
+
+El frontend y el backend deben permanecer en ejecución para utilizar el flujo completo.
+
+## Descargar el proyecto desde GitHub
+
+1. Abrir el repositorio.
+2. Seleccionar **Code → Download ZIP**.
+3. Extraer el archivo ZIP.
+4. Abrir la carpeta que contiene el `package.json` principal, junto con las carpetas `frontend` y `backend`.
+
+No se debe ejecutar la aplicación directamente desde el archivo comprimido.
+
+## Ejecutar en Windows
+
+Con Node.js y pnpm instalados:
+
+1. Abrir la carpeta principal del proyecto.
+2. Hacer doble clic en `iniciar.cmd`.
+3. Esperar la instalación inicial de dependencias, si corresponde.
+4. Mantener abierta la ventana de ejecución.
+5. Abrir en el navegador:
+
+   http://127.0.0.1:5173/
+
+El archivo de inicio ejecuta frontend y backend. Al detenerlos, las direcciones locales dejan de estar disponibles.
+
+## Ejecución manual para revisión técnica
+
+Desde la carpeta principal:
+
+```bash
 pnpm install
 pnpm dev
 ```
 
-Abre [Alma Nómada local](http://127.0.0.1:5173). Mantén la terminal abierta. `Ctrl+C` detiene ambos servicios. El script ejecuta frontend y backend simultáneamente. También puedes usar `iniciar.cmd` en Windows.
+Direcciones locales:
 
-Para ejecutarlos en terminales separadas:
+| Servicio | Dirección |
+|---|---|
+| Frontend | http://127.0.0.1:5173 |
+| Backend | http://127.0.0.1:4000 |
+| Estado del backend | http://127.0.0.1:4000/health |
+| Destinos REST | http://127.0.0.1:4000/api/destinos |
+| GraphQL | POST http://127.0.0.1:4000/graphql |
 
-```powershell
-# Terminal 1, desde la raíz
-pnpm --dir backend dev
-# Terminal 2, desde la raíz
-pnpm --dir frontend dev
-```
+Estas direcciones funcionan en la computadora donde se ejecuta el proyecto. No son enlaces públicos de una aplicación desplegada.
 
-Frontend: puerto 5173. Backend: puerto 4000. Vite redirige `/api` y `/graphql` a Express durante desarrollo. Para otros orígenes o un backend público, copia los `.env.example` como `.env` en la carpeta correspondiente y ajusta `VITE_API_URL`, `PORT` y `CORS_ORIGINS`. Las variables del backend se leen al ejecutarlo desde su carpeta (`pnpm --dir backend start`). Reinicia después de cambiar variables. No publiques `.env` ni credenciales.
+## Configuración
 
-```powershell
-pnpm test
-pnpm build
-# Vista del build con API local configurada en frontend/.env:
-pnpm --dir frontend exec vite preview --host 127.0.0.1
-```
+Se incluyen archivos `.env.example` como referencia.
 
-El preview de producción no tiene proxy: configura antes `VITE_API_URL=http://127.0.0.1:4000` y añade `http://127.0.0.1:4173` a `CORS_ORIGINS` para usarlo con Express local.
+Durante el desarrollo local, Vite redirige las solicitudes `/api` y `/graphql` al backend del puerto 4000.
+
+El backend utiliza:
+
+| Variable | Función |
+|---|---|
+| `PORT` | Puerto del servidor; por defecto, 4000. |
+| `CORS_ORIGINS` | Orígenes autorizados para consultar la API. |
+
+El frontend admite `VITE_API_URL` para configurar otro origen del backend cuando sea necesario.
+
+Los archivos `.env` y `.env.local` no deben publicarse en el repositorio.
 
 ## API REST
 
-| Método | Endpoint | Respuesta |
+| Método | Ruta | Resultado |
 |---|---|---|
-| GET | `/health` | Estado del mock |
-| GET | `/api/destinos` | 9 destinos JSON |
-| GET | `/api/destinos/atacama` | Destino individual |
-| GET | `/api/destinos/no-existe` | 404 JSON |
+| GET | `/health` | Estado del servidor |
+| GET | `/api/destinos` | Catálogo de destinos |
+| GET | `/api/destinos/:id` | Detalle de un destino |
 
-```powershell
-Invoke-RestMethod http://localhost:4000/api/destinos
-Invoke-RestMethod http://localhost:4000/api/destinos/bali
-```
-
-El frontend no importa los JSON del backend. Buscar por nombre, país y modalidad filtra la respuesta REST obtenida, sin duplicar manualmente el catálogo.
+Los identificadores inexistentes devuelven una respuesta JSON con estado HTTP 404.
 
 ## API GraphQL
 
-Endpoint: `POST http://localhost:4000/graphql`. Cabecera `Content-Type: application/json`. Las variables viajan junto a `query` en JSON.
+El endpoint recibe solicitudes POST en `/graphql`.
+
+Ejemplo de consulta:
 
 ```graphql
 query Opciones($destinoId: ID!) {
   vuelosPorDestino(destinoId: $destinoId) {
-    id destinoId aerolinea origen destino fechaSalida
-    horaSalida horaLlegada precio moneda disponible cuposDisponibles
+    id
+    aerolinea
+    fechaSalida
+    precio
+    moneda
+    disponible
   }
   hotelesPorDestino(destinoId: $destinoId) {
-    id destinoId nombre ciudad categoria precioPorNoche moneda
-    servicios fechasDisponibles disponible imagen
+    id
+    nombre
+    precioPorNoche
+    moneda
+    disponible
   }
 }
 ```
 
-Variables: `{"destinoId":"atacama"}`. Para demostrar selección de campos:
+Variables de ejemplo:
 
-```powershell
-$body = @{ query = 'query($id:ID!){vuelosPorDestino(destinoId:$id){aerolinea precio moneda}}'; variables = @{ id = 'atacama' } } | ConvertTo-Json -Depth 5
-Invoke-RestMethod http://localhost:4000/graphql -Method Post -ContentType 'application/json' -Body $body
+```json
+{
+  "destinoId": "atacama"
+}
 ```
 
-El servidor valida campos, tipos y variables con GraphQL.js. Un ID desconocido devuelve listas vacías. Consultas inválidas responden con `errors`; cuerpos inválidos y JSON mal formado tienen HTTP 400.
+La solicitud envía `query` y `variables` en un cuerpo JSON. El servidor valida campos, tipos y variables mediante GraphQL.js.
 
-## Navegación y estado
+## Rutas principales
 
-Rutas de React Router: `/`, `/destinos`, `/destinos/:id`, `/vuelos/:destinoId`, `/hoteles/:destinoId`, `/resumen`, `/experiencias`, `/nosotras`, `/contacto`, `/servicios` y `*` (404). En el navegador se representan como `/#/destinos`, etc. HashRouter evita errores de recarga en GitHub Pages; todos los enlaces internos usan Link/NavLink o useNavigate.
+La aplicación utiliza HashRouter. Por ejemplo, la ruta `/destinos` se visualiza como `/#/destinos`.
 
-`TravelContext` conserva la selección en sessionStorage. Cambiar destino limpia vuelo y hotel; cambiar vuelo limpia hotel. Las etapas incompletas explican qué falta y ofrecen regresar. `useRemote` utiliza useState/useEffect y AbortController, cancela respuestas antiguas y permite reintentar. Hay estados de carga, error y resultados vacíos.
+| Ruta | Función |
+|---|---|
+| `/` | Inicio |
+| `/destinos` | Catálogo y filtros |
+| `/destinos/:id` | Detalle de destino |
+| `/vuelos/:destinoId` | Selección de vuelo |
+| `/hoteles/:destinoId` | Selección de hotel |
+| `/mi-viaje/servicios` | Selección de servicios opcionales |
+| `/resumen` | Resumen, modificaciones y eliminaciones |
+| `/experiencias` | Información de las cinco modalidades |
+| `/experiencias/:id` | Detalle de una modalidad |
+| `/servicios` | Catálogo informativo de servicios |
+| `/nosotras` | Información de la marca |
+| `/contacto` | Formulario de contacto |
 
-Datos de ejemplo: 9 destinos, 18 salidas entre diciembre de 2026 y septiembre de 2027 y 72 alternativas de vuelo. El calendario solicitado y la ampliación se describen en [AMPLIACION.md](docs/AMPLIACION.md). El checkout no consume una noche adicional.
+## Estado y persistencia
 
-## Costo y solicitudes
+`TravelContext` administra la planificación con `useState` y conserva los datos en `sessionStorage`.
 
-`total = (tarifa ida + regreso opcional + equipaje por tramo) × viajeras + tarifa de habitación × noches × habitaciones + servicios`.
+La selección puede mantenerse al recargar durante la misma sesión del navegador. No se almacena en una cuenta de usuario ni se sincroniza con un servidor.
 
-El vuelo se calcula por persona para solo ida o ida y vuelta. Cada habitación admite hasta 2 viajeras; se recomienda ceil(viajeras/2), con ajuste entre 1 y 25. Se elige habitación doble o Suite Deluxe. El resumen revalida GraphQL y muestra clase, equipaje, fechas, check-in y servicios. Los importes son demostrativos. Reserva y contacto son simulaciones locales; los pagos siguen en proceso.
+Las reglas de eliminación y sus dependencias se centralizan en `tripSelection.js`.
 
-## Identidad y recursos
+Las consultas utilizan `useRemote`, que administra carga, errores y reintentos. `AbortController` permite cancelar solicitudes anteriores.
 
-Paleta Terracota & Arena, Playfair Display, Montserrat y Caveat instaladas localmente. El encabezado usa el isotipo original aportado. Se incluye el logotipo completo original y variantes SVG principal/horizontal/isotipo/favicon/monocromática; las versiones vectoriales son aproximaciones, no una reproducción exacta. Procedencia de fotografías y licencias: [recursos](docs/recursos.md).
+## Cálculo de importes
 
-## Pruebas y evidencias
+Todos los importes se expresan en pesos chilenos, CLP.
 
-`pnpm test` ejecuta pruebas de integración HTTP REST/GraphQL y cálculo. Consultar [resultados reales](docs/pruebas/resultados.md), [guía de evidencias](docs/evidencias/GUIA.md) e [informe y matriz](docs/informe-academico.html). Las capturas disponibles se guardan en `docs/evidencias/`. No se presentan pruebas pendientes como realizadas.
-
-## GitHub y GitHub Pages
-
-**Repositorio remoto y URL de Pages: pendientes de crear/publicar.** El conector disponible permite consultar GitHub, pero no crear repositorios ni configurar Pages. No se afirma publicación. Desde la carpeta final, crea un repositorio vacío llamado `alma-nomada` en tu cuenta y ejecuta:
-
-```powershell
-git init -b main
-git add .
-git commit -m "Implementa Alma Nómada con REST y GraphQL"
-git remote add origin https://github.com/TU_USUARIO/alma-nomada.git
-git push -u origin main
+```text
+Total estimado =
+  vuelos según categoría, equipaje, tramos y viajeras
+  + alojamiento según tarifa, noches y habitaciones
+  + servicios adicionales seleccionados
 ```
 
-Si la entrega ya tiene un repositorio Git inicializado, omite `git init`. Si ya hay un commit, crea uno nuevo únicamente para tus cambios. Los node_modules, builds y .env quedan excluidos.
+Las actividades se calculan por viajera. Los traslados se calculan por vehículo y los alquileres consideran un día, según la unidad indicada en la interfaz.
 
-En el repositorio: Settings → Pages → Source: **GitHub Actions**. El workflow `.github/workflows/pages.yml` compila, prueba y publica `frontend/dist`. Agrega en Settings → Secrets and variables → Actions → Variables la variable `VITE_API_URL` con el origen HTTPS de tu backend. No es un secreto. Ejecuta el workflow o sube un commit para publicar.
+Al eliminar un elemento, su importe deja de incluirse en el total.
 
-GitHub Pages solo aloja el frontend estático. El backend debe alojarse en un servicio Node.js por separado: instalar desde la raíz con `pnpm install --frozen-lockfile`, iniciar `pnpm --dir backend start` y definir `PORT` según el proveedor y `CORS_ORIGINS=https://TU_USUARIO.github.io`. Configura la variable de Vite **antes del build**. La URL esperada será `https://TU_USUARIO.github.io/alma-nomada/`, que es un patrón de configuración, no un enlace publicado.
+## Pruebas y compilación
 
-## Limitaciones conocidas
+Para ejecutar las pruebas:
 
-- Publicación y backend público pendientes; el build estático aislado no puede responder REST/GraphQL.
-- No hay autenticación, cobros, correos, reservas reales ni número WhatsApp inventado.
-- Las categorías orientan experiencias; no restringen edad ni estado civil.
-- Los hoteles, rutas y tarifas son ficticios; los nombres de aerolíneas son referenciales y las fotos ilustrativas. Solo se suman las actividades y servicios seleccionados.
-- Las fechas del mock son fijas para una demostración reproducible; no es un buscador comercial en tiempo real.
-- Revisar el registro de pruebas para conocer los navegadores ejecutados realmente.
+```bash
+pnpm test
+```
+
+Para compilar el frontend:
+
+```bash
+pnpm build
+```
+
+La última verificación registrada aprobó 33 pruebas automatizadas y la compilación de Vite.
+
+Los archivos de pruebas cubren:
+
+| Archivo | Cobertura |
+|---|---|
+| `api.test.js` | REST, GraphQL, errores, relaciones y cálculos |
+| `formValidation.test.js` | Reglas compartidas de contacto y reserva |
+| `planning.test.js` | Fechas, vuelos, equipajes, hoteles y servicios |
+| `tripSelection.test.js` | Eliminación de elementos, dependencias y subtotales |
+
+También se verificaron en el navegador integrado el flujo de cinco etapas, la opción de continuar sin servicios, las eliminaciones, la persistencia, la reserva simulada y los enlaces de experiencias.
+
+Las comprobaciones realizadas no equivalen a una certificación de compatibilidad en todas las versiones de Chrome, Firefox y Edge.
+
+## Accesibilidad y presentación
+
+- Estructura HTML semántica.
+- Enlace para saltar al contenido.
+- Etiquetas asociadas a los campos.
+- Estados de carga, error y confirmación.
+- Gestión del foco al navegar.
+- Ventana modal de reserva.
+- Controles utilizables mediante teclado.
+- Diseño adaptable a escritorio y móvil.
+- Paleta Terracota y Arena, coherente con la identidad de Alma Nómada.
+
+## Documentación y evidencias
+
+La carpeta `docs` contiene el informe y los materiales de respaldo de la entrega.
+
+Incluye el informe Word:
+
+[Informe de evidencias de Alma Nómada](docs/Informe%20de%20evidencias_Alma%20Nomada_Maria%20Martinez.docx)
+
+Las capturas documentan funcionalidades y recorridos del aplicativo. Deben interpretarse junto con las limitaciones y verificaciones indicadas en el informe.
+
+## Alcance de la entrega
+
+La entrega consiste en disponibilizar el código fuente completo, el backend, los datos de demostración, las pruebas y la documentación en un repositorio de GitHub.
+
+El proyecto está preparado para ejecutarse localmente. Esta entrega no requiere configurar GitHub Pages ni contratar un alojamiento del backend.
+
+Subir los archivos a GitHub permite revisar y descargar el proyecto; no inicia automáticamente el servidor ni convierte el repositorio en una aplicación pública en funcionamiento.
+
+## Limitaciones
+
+- Los destinos, vuelos, hoteles, tarifas y disponibilidades corresponden a datos de demostración.
+- Los nombres de aerolíneas se utilizan como referencia y no acreditan itinerarios comerciales reales.
+- Las fotografías son ilustrativas.
+- Contacto y reserva son simulaciones locales.
+- No se procesan pagos ni se envían correos.
+- No existe autenticación de usuarias.
+- La planificación se conserva en la sesión del navegador.
+- El backend debe estar activo para consultar destinos, vuelos y hoteles.
+
+## Autoría
+
+María Alejandra Martínez Reverol
+
+Proyecto desarrollado para la asignatura **Frontend II**.
