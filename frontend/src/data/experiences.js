@@ -1,0 +1,55 @@
+export const experiences = [
+  {
+    id: "solo",
+    name: "Alma Solo",
+    audience: "Mujeres que desean viajar solas.",
+    benefits: ["Explora destinos con libertad e independencia.", "Vive nuevas aventuras a tu propio ritmo."],
+    icon: "compass",
+    title: "Tu viaje, tus reglas.",
+    description:
+      "Descubre nuevos lugares con independencia y orientación a cada paso.",
+    image: "/images/atacama.jpg",
+  },
+  {
+    id: "friends",
+    name: "Alma Friends",
+    audience: "Grupos de amigas que quieren viajar juntas.",
+    benefits: ["Comparte aventuras, diversión y experiencias.", "Crea recuerdos inolvidables con tus amigas."],
+    icon: "heart",
+    title: "Mejor, entre amigas.",
+    description: "Escapadas para compartir historias y crear recuerdos juntas.",
+    image: "/images/cartagena.jpg",
+  },
+  {
+    id: "club",
+    name: "Alma Club",
+    audience: "Mujeres que desean conocer nuevas amigas.",
+    benefits: ["Descubre destinos en viajes grupales.", "Conecta con viajeras y crea nuevas amistades."],
+    icon: "users",
+    title: "Llegas sola. Conectas con muchas.",
+    description:
+      "Encuentra nuevas compañeras con las mismas ganas de explorar.",
+    image: "/images/roma.jpg",
+  },
+  {
+    id: "plenitud",
+    name: "Alma Plenitud",
+    audience: "Mujeres mayores que desean seguir explorando.",
+    benefits: ["Disfruta viajes cómodos y adaptados a tu ritmo.", "Descubre nuevas experiencias sin límites de edad."],
+    icon: "sun",
+    title: "Disfruta a tu propio ritmo.",
+    description:
+      "Experiencias cómodas, con información clara de movilidad y esfuerzo.",
+    image: "/images/santorini.jpg",
+  },
+  {
+    id: "wellness",
+    name: "Alma Wellness",
+    audience: "Mujeres que buscan descanso y bienestar.",
+    benefits: ["Desconecta del estrés y reconecta contigo.", "Disfruta experiencias de relajación y naturaleza."],
+    icon: "leaf",
+    title: "Vuelve a conectar contigo.",
+    description: "Naturaleza, descanso y espacio para encontrar tu equilibrio.",
+    image: "/images/bali.jpg",
+  },
+];

@@ -1,0 +1,271 @@
+[
+  {
+    "id": "atacama",
+    "nombre": "San Pedro de Atacama",
+    "pais": "Chile",
+    "ciudad": "San Pedro de Atacama",
+    "descripcion": "Paisajes que parecen de otro planeta. Encuentra silencio entre salares, lagunas y cielos infinitos.",
+    "actividadesPopulares": [
+      "Valle de la Luna",
+      "Lagunas altiplánicas",
+      "Observación de estrellas"
+    ],
+    "categoriasAlma": [
+      "solo",
+      "friends",
+      "wellness"
+    ],
+    "imagen": "/images/atacama.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2026-12-10",
+        "regreso": "2026-12-14",
+        "noches": 4
+      },
+      {
+        "salida": "2027-04-08",
+        "regreso": "2027-04-14",
+        "noches": 6
+      }
+    ]
+  },
+  {
+    "id": "cusco",
+    "nombre": "Cusco",
+    "pais": "Perú",
+    "ciudad": "Cusco",
+    "descripcion": "Historia viva, montañas sagradas y caminos que invitan a descubrir otra forma de mirar.",
+    "actividadesPopulares": [
+      "Valle Sagrado",
+      "Centro histórico",
+      "Cultura andina"
+    ],
+    "categoriasAlma": [
+      "solo",
+      "club"
+    ],
+    "imagen": "/images/cusco.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2026-12-17",
+        "regreso": "2026-12-22",
+        "noches": 5
+      },
+      {
+        "salida": "2027-05-13",
+        "regreso": "2027-05-21",
+        "noches": 8
+      }
+    ]
+  },
+  {
+    "id": "cartagena",
+    "nombre": "Cartagena",
+    "pais": "Colombia",
+    "ciudad": "Cartagena",
+    "descripcion": "Calles de colores, brisa caribeña y tardes que se alargan entre risas y encuentros.",
+    "actividadesPopulares": [
+      "Ciudad amurallada",
+      "Islas del Rosario",
+      "Gastronomía caribeña"
+    ],
+    "categoriasAlma": [
+      "friends",
+      "club",
+      "plenitud"
+    ],
+    "imagen": "/images/cartagena.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2026-12-26",
+        "regreso": "2027-01-02",
+        "noches": 7
+      },
+      {
+        "salida": "2027-06-10",
+        "regreso": "2027-06-15",
+        "noches": 5
+      }
+    ]
+  },
+  {
+    "id": "santorini",
+    "nombre": "Santorini",
+    "pais": "Grecia",
+    "ciudad": "Fira",
+    "descripcion": "El azul del Egeo, pueblos blancos y puestas de sol para guardar en la memoria.",
+    "actividadesPopulares": [
+      "Paseo por Oia",
+      "Navegación por la caldera",
+      "Cocina mediterránea"
+    ],
+    "categoriasAlma": [
+      "friends",
+      "plenitud",
+      "wellness"
+    ],
+    "imagen": "/images/santorini.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2027-05-20",
+        "regreso": "2027-05-29",
+        "noches": 9
+      },
+      {
+        "salida": "2027-09-09",
+        "regreso": "2027-09-16",
+        "noches": 7
+      }
+    ]
+  },
+  {
+    "id": "roma",
+    "nombre": "Roma",
+    "pais": "Italia",
+    "ciudad": "Roma",
+    "descripcion": "Arte en cada esquina, plazas llenas de vida y el placer de recorrer sin prisa.",
+    "actividadesPopulares": [
+      "Coliseo",
+      "Barrio de Trastevere",
+      "Museos y arte"
+    ],
+    "categoriasAlma": [
+      "solo",
+      "club",
+      "plenitud"
+    ],
+    "imagen": "/images/roma.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2026-12-28",
+        "regreso": "2027-01-04",
+        "noches": 7
+      },
+      {
+        "salida": "2027-04-15",
+        "regreso": "2027-04-25",
+        "noches": 10
+      }
+    ]
+  },
+  {
+    "id": "bali",
+    "nombre": "Bali",
+    "pais": "Indonesia",
+    "ciudad": "Ubud",
+    "descripcion": "Respira profundo entre arrozales, templos y jardines. Un viaje para volver a ti.",
+    "actividadesPopulares": [
+      "Yoga",
+      "Arrozales de Ubud",
+      "Templos y bienestar"
+    ],
+    "categoriasAlma": [
+      "solo",
+      "wellness",
+      "friends"
+    ],
+    "imagen": "/images/bali.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2027-03-05",
+        "regreso": "2027-03-19",
+        "noches": 14
+      },
+      {
+        "salida": "2027-08-12",
+        "regreso": "2027-08-24",
+        "noches": 12
+      }
+    ]
+  },
+  {
+    "id": "margarita",
+    "nombre": "Isla de Margarita",
+    "pais": "Venezuela",
+    "ciudad": "Porlamar",
+    "descripcion": "Brisa caribeña, playas y pueblos costeros para compartir días de descanso.",
+    "actividadesPopulares": [
+      "Playas del Caribe",
+      "Paseo por Pampatar",
+      "Gastronomía local"
+    ],
+    "categoriasAlma": [
+      "friends",
+      "plenitud",
+      "wellness"
+    ],
+    "imagen": "/images/margarita.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2026-12-19",
+        "regreso": "2026-12-26",
+        "noches": 7
+      },
+      {
+        "salida": "2027-03-18",
+        "regreso": "2027-03-24",
+        "noches": 6
+      }
+    ]
+  },
+  {
+    "id": "riviera",
+    "nombre": "Riviera Maya",
+    "pais": "México",
+    "ciudad": "Cancún",
+    "descripcion": "Un encuentro con el mar turquesa, la cultura maya y la naturaleza del Caribe mexicano.",
+    "actividadesPopulares": [
+      "Cenotes",
+      "Cultura maya",
+      "Playas de Cancún"
+    ],
+    "categoriasAlma": [
+      "friends",
+      "club",
+      "wellness"
+    ],
+    "imagen": "/images/riviera.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2026-12-11",
+        "regreso": "2026-12-16",
+        "noches": 5
+      },
+      {
+        "salida": "2027-07-08",
+        "regreso": "2027-07-18",
+        "noches": 10
+      }
+    ]
+  },
+  {
+    "id": "marsella",
+    "nombre": "Marsella",
+    "pais": "Francia",
+    "ciudad": "Marsella",
+    "descripcion": "Descubre el puerto mediterráneo, sus barrios históricos y paisajes junto al mar.",
+    "actividadesPopulares": [
+      "Puerto Viejo",
+      "Barrio Le Panier",
+      "Paseos por la costa"
+    ],
+    "categoriasAlma": [
+      "solo",
+      "club",
+      "plenitud"
+    ],
+    "imagen": "/images/marsella.jpg",
+    "fechasDisponibles": [
+      {
+        "salida": "2027-04-22",
+        "regreso": "2027-04-25",
+        "noches": 3
+      },
+      {
+        "salida": "2027-09-16",
+        "regreso": "2027-09-24",
+        "noches": 8
+      }
+    ]
+  }
+]
